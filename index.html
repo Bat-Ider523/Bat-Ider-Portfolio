@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bat-Ider Portfolio</title>
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pbRmFa6tz+6m5eYlQ72+z8t95KQZ0tu6p9+K1ZQh5cSPq1K7jW7gG4eyk6Yd4LtRVGfRqli7rYli+uHc+Xgv1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #ffffff, #746f6f);
+    color: rgb(23 17 17);
+    overflow-x: hidden;
+}   
+
+/* NAVIGATION */
+nav {
+    position: fixed;
+    width: 100%;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    z-index: 1000;
+}
+
+nav button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    background: rgb(255, 255, 255);
+    color: #333;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav button:hover {
+    transform: scale(1.1);
+}
+
+/* SECTIONS */
+.section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 120px 20px 50px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    text-align: center;
+    pointer-events: none;
+}
+
+.section.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* HOME */
+.home-container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.mongolian-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 36px;
+    font-weight: bold;
+    color: rgb(73, 37, 37);
+    letter-spacing: 8px;
+}
+
+.profile img {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    margin: 20px 0;
+    border: 4px solid rgb(157, 147, 147);
+}
+
+/* CARDS */
+.card {
+    /* pink background for text boxes */
+    background: rgba(72, 74, 76, 0.3);
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 500px;
+    backdrop-filter: blur(15px);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* RESPONSIVE */
+@media(max-width: 600px){
+    nav {
+        flex-wrap: wrap;
+    }
+}
+
+/* CONTACT SECTION */
+#contact .icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+}
+#contact .icons a {
+    color: rgb(166, 159, 159);
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+#contact .icons a:hover {
+    transform: scale(1.2);
+}
+
+#contact .contact-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#contact .contact-buttons .btn {
+    background: rgba(72, 74, 76, 0.3);
+    color: rgb(28, 26, 26);
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s;
+}
+
+#contact .contact-buttons .btn:hover {
+    background: rgba(255,255,255,0.4);
+    transform: scale(1.05);
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('education')">Education</button>
+    <button onclick="showSection('languages')">Languages</button>
+    <button onclick="showSection('extra')">Extracurriculars</button>
+    <button onclick="showSection('contact')">Contact</button>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="section active">
+    <h1>Bat-Ider Bayarkhuu</h1>
+    <div class="home-container">
+        <div class="mongolian-text">ᠪᠠᠲᠤ-ᠢᠳᠡᠷ</div>
+        <div class="profile">
+            <img src="Tseej zurag.png" alt="Profile Picture">
+        </div>
+        <div class="mongolian-text">ᠪᠠᠶᠠᠷᠬᠦ᠋ᠦ</div>
+    </div>
+    <p>Welcome to my personal portfolio.</p>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="section">
+    <h1>Education</h1>
+    <div class="card">
+        <h2>Public school№5</h2>
+        <p>Primary School</p>
+        <p>Years Attended</p>
+        <p>2014-2019</p>
+        <p>GPA: 4.0/4.0 </p>
+        <p>Mongolian Gerchilgee</p>
+    </div>
+
+    <div class="card">
+        <h2>Ulaanbaatar Elite International School</h2>
+        <p>Physics/ Computer Science class</p>
+        <p>Years Attended</p>
+        <p>2019-2026</p>
+        <p>GPA: 3.95/4.0 </p>
+        <p>Cambridge AS/A-Level</p>
+    </div>
+
+    <div class="card">
+        <h2>Achievements</h2>
+        <p>Ielts: 7  
+        SAT Maths:750
+        </p>
+        <p> IGCSE </p>
+        <p></p>    Pure Mathermatics: A
+            Chemistry: B
+            Biology: C
+        <p>   Computer Science: C </p>  
+    <p> As-Level </p>
+    <p> Mathematics : C</p>
+    <p> Volleyball First-Class Qualified Athlete (1-р зэрэг)</p>
+        </p>
+    </div>
+</section>
+
+<!-- LANGUAGES -->
+<section id="languages" class="section">
+    <h1>Language Skills</h1>
+
+    <div class="card">
+        <h2>Mongolian</h2>
+        <p>Mother Tongue</p>
+    </div>
+
+    <div class="card">
+        <h2>English</h2>
+        <p>Fluent</p>
+    </div>
+
+    <div class="card">
+        <h2>Chinese</h2>
+        <p>Beginner</p>
+    </div>
+        <div class="card">
+        <h2>Japanese</h2>
+        <p>Beginner</p>
+    </div>
+</section>
+
+<!-- EXTRACURRICULARS -->
+<section id="extra" class="section">
+    <h1>Extracurricular Activities</h1>
+
+    <div class="card">
+        <h2>"Learn On Demand"</h2>
+        <p>Created Physics tutoring website to help with the exams & develop interest in STEM to increase the number of science students</p>
+        <p> Hours spent per week: 5</p>
+        <p>Weeks spent per year: 36 </p>
+        <p>Participation grade: 9-12</p>
+    </div>
+
+       <div class="card">
+        <h2>"Sports Society of Ulaanbaatar Elite International School"</h2>
+        <p>Founded 1st sports society, from 8th grade, focused on growing our sports scene and encouraging students to join competitions</p>
+        <p> Hours spent per week: 4</p>
+        <p>Weeks spent per year: 5 </p>
+        <p>Participation grade: 12</p>
+    </div>
+        <div class="card">
+        <h2>"U19 Volleyball team of Ulaanbaatar Elite International School"</h2>
+        <p>Organized & led 20+ athletes ~4 years on volleyball trips to Beijing; active captain, winning 4 out of 5 matches; conducted cultural exchange w/China</p>
+        <p> Hours spent per week: 4</p>
+        <p>Weeks spent per year: 40 </p>
+        <p>Participation grade: 8-12</p>
+    </div>
+        <div class="card">
+        <h2>"Spark2024"</h2>
+        <p>Taught English & career lessons to +80 rural students, to empower with language skills & boost the confidence for future prospects </p>
+        <p> Hours spent per week: 35</p>
+        <p>Weeks spent per year: 2 </p>
+        <p>Participation grade: 10</p>
+    </div>
+        <div class="card">
+        <h2>"Harvard MUN 2025, EIMUN2023-2025,ESMUN2024-2025,WSC2023,ASUMUN2025"</h2>
+        <p>Served as a chair & delegate in MUNs; discussed global issues to develop and enhancing self-expression skills through debates </p>
+        <p> Hours spent per week: 30</p>
+        <p>Weeks spent per year: 4</p>
+        <p>Participation grade: 10-12</p>
+    </div>
+        <div class="card">
+        <h2>"Mongolian children's council"</h2>
+        <p>Served as the head of the sports society; promoted sports knowledge among students;  organized social events & webinars to foster interest in sports</p>
+        <p> Hours spent per week: 3</p>
+        <p>Weeks spent per year: 20 </p>
+        <p>Participation grade: 11-12</p>
+    </div>
+        <div class="card">
+        <h2>"Clean-Up2, Enkh Munkhiin Baigali, Sain Sanaa, Bayangol park,"</h2>
+        <p>Assisted  peers with the planting of 3k seedlings to reduce greenhouse gases; cleaned up the most polluted area of the city, including river banks</p>
+        <p> Hours spent per week: 4</p>
+        <p>Weeks spent per year: 20 </p>
+        <p>Participation grade: 10</p>
+    </div>
+        <div class="card">
+        <h2>""Uncage Mongolia NGO"- Volunteering organization "</h2>
+        <p>Worked & led +40 volunteers for 6 months to help 6 orphans; donated necessary items: clothes, books, fund to ameliorate the orphan's service</p>
+        <p> Hours spent per week: 9</p>
+        <p>Weeks spent per year: 24 </p>
+        <p>Participation grade: 9-10</p>
+    </div>
+        <div class="card">
+        <h2>"The Scout Association of Mongolia "</h2>
+        <p>Been a proud Scout member, learning leadership, teamwork, and survival skills while serving the community and protecting nature at the same time</p>
+        <p> Hours spent per week: 8</p>
+        <p>Weeks spent per year: 4 </p>
+        <p>Participation grade: 10-12</p>
+    </div>
+        <div class="card">
+        <h2>"National Center for Transfusion Medicine, Red Cross,Ulaanbaatar Marathon 2024,Huurhun zulzaga NGO "</h2>
+        <p>Supported organizations by organizing events and training volunteers, enhancing teamwork and overall project efficiency</p>
+        <p> Hours spent per week: 3</p>
+        <p>Weeks spent per year: 25 </p>
+        <p>Participation grade: 9-12</p>
+   
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+    <h1>Contact Me</h1>
+    <p>Feel free to reach out via Instagram or email:</p>
+    <div class="icons">
+        <a href="https://instagram.com/btidr" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram fa-3x"></i>
+        </a>
+        <a href="mailto:batider523@gmail.com" aria-label="Email">
+            <i class="fas fa-envelope fa-3x"></i>
+        </a>
+    </div>
+    <div class="contact-buttons">
+        <a class="btn" href="https://instagram.com/btidr" target="_blank">Instagram</a>
+        <a class="btn" href="mailto:batider523@gmail.com">Send Email</a>
+    </div>
+</section>
+
+<script>
+function showSection(sectionId) {
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => {
+        section.classList.remove('active');
+    });
+
+    // force reflow to ensure transition
+    void document.body.offsetWidth;
+    document.getElementById(sectionId).classList.add('active');
+}
+</script>
+
+</body>
+</html>
